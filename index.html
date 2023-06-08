@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FlameClient - The Ultimate Eaglercraft Client</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #FFF;
+            background-color: #111;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        a {
+            color: #FF4444;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #FF6666;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: #111;
+            z-index: 100;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        nav ul li a {
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+            position: relative; /* Added */
+        }
+
+        nav ul li a:hover {
+            color: #FF6666;
+        }
+
+        /* Add the following styles */
+        .nav-indicator {
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #FF4444;
+            transform: scaleX(0); /* Initially hidden */
+            transform-origin: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover .nav-indicator,
+        nav ul li a.active .nav-indicator {
+            transform: scaleX(1); /* Display on hover and when active */
+        }
+
+        /* Hero Styles */
+        .hero {
+            height: 500px;
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #FFF;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #FF4444;
+            color: #FFF;
+            font-size: 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #FF6666;
+            transform: scale(1.05);
+        }
+
+        /* Features Styles */
+        .features {
+            padding: 100px 0;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #FFF;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .features ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .features li {
+            margin: 20px;
+            padding: 20px;
+            background-color: #000;
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .features li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        /* Download Styles */
+        .download {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .download h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #FFF;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .download p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #FFF;
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* Support Styles */
+        .support {
+            padding: 100px 0;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .support h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #FFF;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .support p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #FFF;
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 20px;
+            background-color: #111;
+            color: #FFF;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home<span class="nav-indicator"></span></a></li>
+                <li><a href="features.html">Features<span class="nav-indicator"></span></a></li>
+                <li><a href="support.html">Support<span class="nav-indicator"></span></a></li>
+                <li><a href="download.html">Download<span class="nav-indicator"></span></a></li> <!-- Added -->
+                <li><a href="contact.html">Contact<span class="nav-indicator"></span></a></li> <!-- Added -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>The Ultimate Eaglercraft Client</h1>
+                <p>FlameClient is a powerful Eaglercraft client that enhances your gaming experience with a variety of features and optimizations.</p>
+                <a href="#" class="cta-button">Download Now</a>
+            </div>
+        </section>
+        <!-- Rest of the content -->
+    </main>
+    <footer>
+        <p>&copy; 2023 FlameClient. All rights reserved.</p> <a href="terms.html">Terms and Services</a></p>
+    </footer>
+</body>
+</html>

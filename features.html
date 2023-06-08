@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FlameClient - The Ultimate Minecraft Client</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #FFF;
+            background-color: #111;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        a {
+            color: #FF4444;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #FF6666;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: #111;
+            z-index: 100;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        nav ul li a {
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+            position: relative; /* Added */
+        }
+
+        nav ul li a:hover {
+            color: #FF6666;
+        }
+
+        /* Add the following styles */
+        .nav-indicator {
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #FF4444;
+            transform: scaleX(0); /* Initially hidden */
+            transform-origin: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover .nav-indicator,
+        nav ul li a.active .nav-indicator {
+            transform: scaleX(1); /* Display on hover and when active */
+        }
+
+        /* Features Styles */
+        .features {
+            padding: 100px 0;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #FFF;
+            transition: color 0.3s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Added text-shadow */
+        }
+
+        .features ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .features li {
+            margin: 20px;
+            padding: 20px;
+            background-color: #000;
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .features li:hover {
+            transform: translateY(-5px);
+        }
+
+        .features li h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #FF4444;
+        }
+
+        .features li p {
+            font-size: 16px;
+            color: #FFF;
+        }
+
+        /* Add the following styles */
+        .features li .mods {
+            font-size: 14px;
+            color: #FF6666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="FlameClient Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="features.html">Features</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="features">
+        <h2>Features</h2>
+        <ul>
+            <li>
+                <h3>Enhanced Graphics</h3>
+                <p>Experience Minecraft like never before with improved graphics, including realistic textures and enhanced lighting effects.</p>
+            </li>
+            <li>
+                <h3>Advanced Customization</h3>
+                <p>Customize your Minecraft experience with advanced settings, including FOV adjustments, HUD customization, and more.</p>
+            </li>
+            <li>
+                <h3>Integrated Mods</h3>
+                <p>Enjoy a wide range of integrated mods that add new gameplay features, such as new weapons, tools, and blocks.</p>
+                <p class="mods">Some popular mods include XYZ Mod, ABC Mod, and Minecraft+"Plus" Mod.</p>
+            </li>
+            <li>
+                <h3>Improved Performance</h3>
+                <p>Optimized code and performance enhancements ensure smooth gameplay, even on lower-end systems.</p>
+            </li>
+            <li>
+                <h3>Enhanced Multiplayer</h3>
+                <p>Connect with friends and join multiplayer servers with ease, thanks to improved server browser and social features.</p>
+            </li>
+            <li>
+                <h3>Security and Protection</h3>
+                <p>Keep your account and data safe with built-in security features, including anti-cheat measures and account protection.</p>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

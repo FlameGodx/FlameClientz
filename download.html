@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function() {
+            setTimeout(deletePage, 3000);
+        }
+
+        function deletePage() {
+            document.documentElement.remove();
+        }
+    </script>
+</head>
+<body>
+    <h1>File Download</h1>
+    <p>Your file will start downloading automatically.</p>
+
+    <a href="FlameClient.html" download>Click here if the download doesn't start</a>
+</body>
+</html>
